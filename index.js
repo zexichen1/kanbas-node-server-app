@@ -37,5 +37,5 @@ UserRoutes(app);
 ModuleRoutes(app);
 AssignmentRoutes(app);
 EnrollmentRoutes(app);
-//Hello(app);
+Hello(app);
 app.listen(process.env.PORT || 4000)
