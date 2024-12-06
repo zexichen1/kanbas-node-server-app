@@ -104,7 +104,7 @@ export default [{
   "lastName": "Greenleaf",
   "email": "legolas@mirkwood.com",
   "dob": "2879-07-15",
-  "role": "STUDENT",
+  "role": "ADMIN",
   "loginId": "001234569S",
   "section": "S101",
   "lastActivity": "2020-11-11",
