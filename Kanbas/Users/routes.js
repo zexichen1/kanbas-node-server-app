@@ -5,15 +5,12 @@ export default function UserRoutes(app) {
   const createUser = (req, res) => { };
   const deleteUser = (req, res) => { };
   const findAllUsers = async (req, res) => {
-<<<<<<< Updated upstream
-=======
     const { role } = req.query;
     if (role) {
       const users = await dao.findUsersByRole(role);
       res.json(users);
       return;
     }
->>>>>>> Stashed changes
     const users = await dao.findAllUsers();
     res.json(users);
   };
