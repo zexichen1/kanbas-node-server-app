@@ -17,7 +17,7 @@ const app = express()
 app.use(
   cors({
     credentials: true,
-    origin: "https://6753a7d7b003da64b5694968--bespoke-donut-101b0d.netlify.app/",
+    origin: "https://6753a7d7b003da64b5694968--bespoke-donut-101b0d.netlify.app",
   })
 );
 const sessionOptions = {
