@@ -52,3 +52,5 @@ mongoose.connection.on('error', (err) => {
   console.error('MongoDB connection error:', err);
 });
 app.listen(process.env.PORT || 4000)
+console.log(req.session);
+console.log(req.body);
