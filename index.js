@@ -42,4 +42,13 @@ ModuleRoutes(app);
 AssignmentRoutes(app);
 EnrollmentRoutes(app);
 Hello(app);
+mongoose.connect(CONNECTION_STRING);
+
+mongoose.connection.on('connected', () => {
+  console.log('MongoDB connected successfully!');
+});
+
+mongoose.connection.on('error', (err) => {
+  console.error('MongoDB connection error:', err);
+});
 app.listen(process.env.PORT || 4000)
