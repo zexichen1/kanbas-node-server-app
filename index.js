@@ -17,7 +17,7 @@ const app = express()
 app.use(
   cors({
     credentials: true,
-    origin: "https://6755fe9dc335dd1b41d2168a--darling-profiterole-e0fec8.netlify.app",
+    origin: "https://a6--darling-profiterole-e0fec8.netlify.app",
   })
 );
 const sessionOptions = {
