@@ -1,27 +1,32 @@
 import Database from "../Database/index.js";
+
 export function findAllCourses() {
   return model.find();
 }
+
 export function findCoursesForEnrolledUser(userId) {
   const { courses, enrollments } = Database;
-  const enrolledCourses = courses.filter((course) =>
-    enrollments.some((enrollment) => enrollment.user === userId && enrollment.course === course._id));
-  return enrolledCourses;
+  return courses.filter(({ _id }) =>
+    enrollments.some(({ user, course }) => user === userId && course === _id)
+  );
 }
+
 export function findCoursesForUnenrolledUser(userId) {
   const { courses, enrollments } = Database;
-  const enrolledCourses = courses.filter((course) =>
-    !enrollments.some((enrollment) => enrollment.user === userId && enrollment.course === course._id));
-  return enrolledCourses;
+  return courses.filter(({ _id }) =>
+    !enrollments.some(({ user, course }) => user === userId && course === _id)
+  );
 }
+
 export function createCourse(course) {
-  delete course._id;
-  return model.create(course);
+  const { _id, ...courseData } = course; // 删除 _id 字段
+  return model.create(courseData);
 }
+
 export function deleteCourse(courseId) {
   return model.deleteOne({ _id: courseId });
- }
- 
+}
+
 export function updateCourse(courseId, courseUpdates) {
   return model.updateOne({ _id: courseId }, { $set: courseUpdates });
 }
